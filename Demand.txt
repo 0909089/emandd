@@ -1,0 +1,3 @@
+primary - #f89839
+secondary - #000000
+light - #ffffff
