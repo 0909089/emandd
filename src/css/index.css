@@ -3,18 +3,32 @@ secondary - #000000
 light - #ffffff */
 :root {
   --primary-color:#f89839;
-  --secondary-color:#000000;
+  --primary-color-hover:#d88129;  
+  --secondary-color:rgb(255, 69, 0);
   --light-color:#ffffff;
   --over-lay:#00000080;
+  --content-color:black;
+
+  
+
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin:0;
   padding:0;
   list-style: none;
   text-decoration: none;
   font-family: Poppins;
+  box-sizing: border-box;
 }
 
+body {
+  position: relative;
+} 
 .container {
   padding: 0 !important;
 }
@@ -64,7 +78,8 @@ light - #ffffff */
   transform: translateX(-50%);
   position: fixed;
   height:auto;
-  background-color: rgb(255, 255, 255) !important;;
+  background-color: rgb(255, 255, 255) !important;
+  z-index:1000;
 }
 .hero {
   width:100%;
@@ -96,6 +111,98 @@ button.hamburger-menu {
   display: none;
 }
 
+#about-us {
+  width:100%;
+  /* height:100vh; */
+  margin-bottom:2.5rem !important;
+
+  .content-holder {
+    height:auto;
+  }
+
+  h2 {
+    margin:2.5rem 0;
+  }
+
+  img {
+    width:40% !important;
+    /* height:40% !important; */
+    border-radius: 25px;
+  }
+
+  .about-card i {
+    font-size:1.5rem !important;
+    margin-right:1rem;
+    color: var(--primary-color);
+  }
+
+  .more-btn .btn:hover {
+    background-color: var(--primary-color-hover) !important;
+  }
+
+}
+
+#services {
+  .card {
+    background-color: transparent !important;
+    border:2px solid var(--light-color);
+    color:var(--light-color) !important;
+  }
+}
+
+#contact {
+  .card .icon-holder {
+    padding:1rem 1.25rem !important;
+    background-color: var(--over-lay);
+    border-radius: 50px;
+  }
+  .card .card-title {
+    margin:1rem 0 !important;
+  }
+}
+
+#back-to-top{
+  display: none;
+  position: fixed;
+  bottom:20px;
+  right: 20px;
+  background:var(--primary-color);
+  transition: 250ms ease;
+
+  &:hover {
+    background-color:var(--primary-color-hover);
+    cursor: default;
+  }
+
+}
+
+#footer {
+
+  a {
+    text-decoration: none;
+    color:var(--light-color) !important;
+  }
+  a:hover i {
+    transition: 250ms ease-in-out;
+    background-color:var(--light-color) !important;
+    color:var(--primary-color) !important;
+  }
+  
+  a i {
+    background-color:black !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:48px;
+    height:48px;
+  }
+}
+
+#back-to-top.show {
+  transition: 250ms ease-out;
+  display:block;
+}
+
 @media screen and (max-width:978px) {
 
   header {
@@ -111,4 +218,36 @@ button.hamburger-menu {
     padding:0 20px;
   }
 
+  #about-us {
+    .content-holder {
+      flex-direction: column;
+
+      img {
+        min-width: 300px !important;
+      }
+      .about-us-content {
+        h2 {
+          text-align: center;
+        }
+
+        .about-card {
+          margin:0 !important;
+          padding:0 !important;
+          flex-direction: column;
+          text-align: left;
+          width:100%;
+          i {
+            margin:2rem !important;
+          }
+        }
+      }
+    }
+  }
+
+  #contact {
+    h5 {
+      font-size:1.1rem !important;
+    }
+  }
+  
 }
